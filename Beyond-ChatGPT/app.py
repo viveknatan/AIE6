@@ -9,6 +9,7 @@ from chainlit.playground.providers import ChatOpenAI  # importing ChatOpenAI too
 from dotenv import load_dotenv
 
 load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # ChatOpenAI Templates
 system_template = """You are a helpful assistant who always speaks in a pleasant tone!
@@ -78,3 +79,4 @@ async def main(message: cl.Message):
 
     # Send and close the message stream
     await msg.send()
+
